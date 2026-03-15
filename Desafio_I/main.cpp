@@ -4,8 +4,11 @@ using namespace std;
 
 int funcion_tablero (int &filas, int &columnas){
 }
+//void imprimir tablero (){
 
-    int main()
+//}
+
+int main()
     {
         int filas;
         int columnas;
@@ -40,5 +43,16 @@ int funcion_tablero (int &filas, int &columnas){
 
         return 0;
     }
+
+
+//FUNCIONES PARAD DEFINIR PIEZAS EN FUNCIONES
+
+
+
+
+
+
+
+
 
 
