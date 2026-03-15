@@ -1,6 +1,9 @@
 #include <iostream>
 
-    using namespace std;
+using namespace std;
+
+int funcion_tablero (int &filas, int &columnas){
+}
 
     int main()
     {
