@@ -2,44 +2,9 @@
 
 using namespace std;
 
-int funcion_tablero (int &filas, int &columnas){
-}
-//void imprimir tablero (){
-
-//}
 
 int main()
     {
-        int filas;
-        int columnas;
-
-        for (; ; )
-        {
-            cout<< "Ingrese un numero de filas que sea multiplo de 8: " ;
-            cin >> filas;
-
-            if (filas > 0 && filas % 8==0)
-            {
-                break;
-            }
-            cout<< "Intente nuevamente." << endl;
-            cout<< "Ingrese un numero que sea multiplo de 8 (8,16,24..). " << endl;
-        }
-
-        for (; ; )
-        {
-            cout<< "Ingrese un numero de columnas que sea mayor a 8: " ;
-            cin >> columnas;
-
-            if (columnas > 8 )
-            {
-                break;
-            }
-            cout<< "Intente nuevamente" << endl;
-            cout<< "El numero debe ser mayor a 8" << endl;
-        }
-
-        cout<< "Tablero creado correctamente";
 
         return 0;
     }
