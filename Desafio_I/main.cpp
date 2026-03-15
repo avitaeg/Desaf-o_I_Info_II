@@ -22,15 +22,15 @@
 
         for (; ; )
         {
-            cout<< "Ingrese un numero de columnas que sea multiplo de 8: " ;
+            cout<< "Ingrese un numero de columnas que sea mayor a 8: " ;
             cin >> columnas;
 
-            if (columnas > 0 && columnas % 8==0)
+            if (columnas > 8 )
             {
                 break;
             }
             cout<< "Intente nuevamente" << endl;
-            cout<< "Ingrese un numero que sea multiplo de 8 (8,16,24..)" << endl;
+            cout<< "El numero debe ser mayor a 8" << endl;
         }
 
         cout<< "Tablero creado correctamente";
