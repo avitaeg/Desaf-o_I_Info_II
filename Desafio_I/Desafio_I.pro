@@ -4,6 +4,4 @@ CONFIG -= app_bundle
 CONFIG -= qt
 
 SOURCES += \
-        funciones_Elvia.cpp \
-        funciones_lina.cpp \
         main.cpp
