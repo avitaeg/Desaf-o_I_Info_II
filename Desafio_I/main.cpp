@@ -1,7 +1,6 @@
 #include <iostream>
 #include <cstdlib>
 #include <ctime>
-#include <conio.h>
 using namespace std;
 
 // ─── FIGURAS ───────────────────────────────────────────────────
@@ -111,8 +110,18 @@ void crearTablero(unsigned char*& tablero, int& filas, int& columnas)
     {
         cout << "Ingrese numero de filas (minimo 1): ";
         cin >> filas;
+
+        if (cin.fail())
+        {
+            cin.clear();
+            cin.ignore(1000, '\n');
+            cout << "Ingrese solo numeros.\n";
+            continue;
+        }
+
         if (filas > 0)
             break;
+
         cout << "Debe ser mayor a 0\n";
     }
 
@@ -120,8 +129,18 @@ void crearTablero(unsigned char*& tablero, int& filas, int& columnas)
     {
         cout << "Ingrese numero de columnas (multiplo de 8): ";
         cin >> columnas;
+
+        if (cin.fail())
+        {
+            cin.clear();
+            cin.ignore(1000, '\n');
+            cout << "Ingrese solo numeros.\n";
+            continue;
+        }
+
         if (columnas >= 8 && columnas % 8 == 0)
             break;
+
         cout << "Debe ser multiplo de 8\n";
     }
 
@@ -269,7 +288,8 @@ int main()
                         pieza, altoPieza, colPieza, filaPieza);
         cout << "\nA: bajar | I: izquierda | D: derecha | R: rotar | ESC: salir\n";
 
-        char tecla = _getch();
+        char tecla;
+        cin >> tecla;
 
         if (tecla == 'a' || tecla == 'A')
         {
@@ -311,18 +331,24 @@ int main()
 
         if (tecla == 'i' || tecla == 'I')
         {
-            if (!hayColision(tablero, pieza, filas, columnas,
-                             altoPieza, anchoPieza,
-                             colPieza - 1, filaPieza))
-                colPieza--;
+            if (filaPieza + altoPieza < filas)
+            {
+                if (!hayColision(tablero, pieza, filas, columnas,
+                                 altoPieza, anchoPieza,
+                                 colPieza - 1, filaPieza))
+                    colPieza--;
+            }
         }
 
         if (tecla == 'd' || tecla == 'D')
         {
-            if (!hayColision(tablero, pieza, filas, columnas,
-                             altoPieza, anchoPieza,
-                             colPieza + 1, filaPieza))
-                colPieza++;
+            if (filaPieza + altoPieza < filas)
+            {
+                if (!hayColision(tablero, pieza, filas, columnas,
+                                 altoPieza, anchoPieza,
+                                 colPieza + 1, filaPieza))
+                    colPieza++;
+            }
         }
 
         if (tecla == 'r' || tecla == 'R')
